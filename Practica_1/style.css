@@ -1,0 +1,125 @@
+.chat-web {
+    display: flex; /*Hago que los elementos hijos se muestren en linea*/
+    height: 100vh; /*Hago que el chat-web ocupe toda la pantalla*/
+}
+
+/*Propiedades del BLOQUE de la lista contactos*/
+.lista-contactos {
+    width: 20%;
+    background-color: lightgray;
+    overflow-y: scroll;
+}
+
+/*Propiedades de la cabecera de la lista de contactos*/
+.lista-contactos h1 {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+/*Propiedades de la lista de contactos*/
+.lista-contactos ul {
+    margin: 0;
+    padding: 0;
+}
+
+/*Propiedades de los elementos de la lista*/
+.lista-contactos li {
+    padding: 10px;
+    border-bottom: 3px solid gray;
+    cursor: pointer;
+}
+
+/*Propiedades del boton para agregar un contacto*/
+.lista-contactos button {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #357D14;
+    color: white;
+    border: none; /* Quito el borde del boton */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat {
+    width: 80%;
+    background-color: white;
+    overflow-y: scroll;
+}
+
+/*Cabeza del chat*/
+.chat h1 {
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+}
+
+.mensajes {
+    padding: 10px;
+    font-size: 17px;
+}
+
+/*Propiedades de los mensajes*/
+.mensaje {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+/*Propiedades de los mensajes de la izquierda*/
+.mensaje.izq {
+    justify-content: flex-start;
+}
+
+/*Propiedades de los mensajes de la derecha*/
+.mensaje.der {
+    justify-content: flex-end;
+}
+
+/*"Relleno" del mensaje de la derecha*/
+.mensaje.der p {
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    word-wrap: break-word;
+    background: #9BC986;
+}
+
+/*"Relleno" del mensaje de la izquierda*/
+.mensaje.izq p {
+    background-color: lightgray;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 60%;
+    word-wrap: break-word;
+}
+
+/*Propiedades del bloque para escribir y enviar un mensaje*/
+.input-boton {
+    display: flex;
+    padding: 10px;
+    border-top: 4px solid gray;
+    position: absolute;
+    bottom: 0;
+    width: 77%;
+    margin: 10px 10px 10px 10px;
+}
+
+/*Propiedades del input para escribir un mensaje*/
+.input-boton input {
+    flex-grow: 1;
+    padding: 20px;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+/*Propiedades del boton para enviar un mensaje*/
+.input-boton button {
+    background-color: #357D14;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    font-size: 20px;
+}
