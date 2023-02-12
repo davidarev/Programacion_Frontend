@@ -1,0 +1,94 @@
+<!--
+Ejercicio de Prueba
+    a) Crea un botón 1 que al pulsarlo cambie la posición aleatoriamente del botón 2.
+    b) Crea un botón 2 que al pulsarlo cambie su color.
+    c) Crea un círculo que al pulsarlo se pueda controlar con las flechas del teclado.
+    d) Crea un círculo que al pulsarlo se mueva de arriba a abajo y de abajo a arriba.
+ -->
+
+<!DOCTYPE html>
+    <head>
+        <link href="style.css" rel="stylesheet">
+        <title>Juego</title>
+        <script lang="javascript">
+            //Apartado a)
+            function changePositionBtn2() {
+                var btn2 = document.getElementById("btn2"); //Obtengo el ID del boton
+                btn2.innerText = "Pulsado"; //Cambio el texto del boton
+                btn2.style.position = "absolute"; //Cambio la posicion del boton
+                //Cambio la posicion aleatoriamente
+                btn2.style.left = Math.floor(Math.random() * 1500) + "px";
+                btn2.style.top = Math.floor(Math.random() * 750) + "px";
+            }
+            //Apartado b)
+            function changeButton2() {
+                var btn2 = document.getElementById("btn2");
+                btn2.innerHTML = "He cambiado de color!!";
+                btn2.style.backgroundColor = "#" + Math.floor(Math.random() * 16777215).toString(16); //Cambio el color del boton aleatoriamente
+            }
+            //Apartado c)
+            function controlar() {
+                var circulo = document.getElementById("crl1");
+                circulo.innerHTML = "Usa las flechas para controlarme";
+                circulo.style.fontSize = "13px";
+                circulo.style.textAlign = "center";
+                circulo.style.position = "absolute";
+                //La posicion inicial del circulo es la misma que donde aparece
+                circulo.style.left = circulo.offsetLeft + "px";
+                circulo.style.top = circulo.offsetTop + "px";
+                document.onkeydown = function(e) {
+                    switch (e.keyCode) {
+                        case 37: //Flecha izquierda
+                            circulo.style.left = (parseInt(circulo.style.left) - 10) + "px"; //parseInt convierte un string a un numero
+                            break;
+                        case 38: //Flecha arriba
+                            circulo.style.top = (parseInt(circulo.style.top) - 10) + "px";
+                            break;
+                        case 39: //Flecha derecha
+                            circulo.style.left = (parseInt(circulo.style.left) + 10) + "px";
+                            break;
+                        case 40: //Flecha abajo
+                            circulo.style.top = (parseInt(circulo.style.top) + 10) + "px";
+                            break;
+                    }
+                };
+            }
+            //Apartado d)
+            function subirybajarauto() {
+                var circulo = document.getElementById("crl2");
+                circulo.style.position = "absolute";
+                circulo.innerHTML = "ME ESTOY MOVIENDO!!";
+                circulo.style.fontSize = "13px";
+                circulo.style.textAlign = "center";
+                circulo.style.position = "absolute";
+                var id = setInterval(frame_bajada, 5); //Con setInterval se ejecuta una funcion cada x tiempo (5ms)
+                //Funcion de bajada que se ejecuta cada 5ms
+                function frame_bajada() {
+                    if (parseInt(circulo.style.top) >= window.innerHeight - circulo.offsetHeight) { //Si el circulo llega al final de la pagina
+                        clearInterval(id); //Paro el intervalo
+                        var id2 = setInterval(frame_subida, 5); //Ejecuto el intervalo para que el circulo suba
+                    } else {
+                        circulo.style.top = (parseInt(circulo.style.top) + 15) + "px"; //Cambio la posicion del circulo
+                    }
+                }
+                //Funcion de subida que se ejecuta cada 5ms
+                function frame_subida() {
+                    if (parseInt(circulo.style.top) <= 0) { //Si el circulo llega al principio de la pagina
+                        setInterval(frame_bajada, 5);
+                        clearInterval(id2);
+                    } else {
+                        circulo.style.top = (parseInt(circulo.style.top) - 15) + "px";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <button id="btn1" onclick="changePositionBtn2()">Click me</button>
+        <button id="btn2" onclick="changeButton2()">Click me</button>
+        <div class="circulo" id="crl1" onclick="controlar()" style=" position: absolute; left: 200px; top: 320px;">Pulsame</div>
+        <div class="circulo" id="crl2" onclick="subirybajarauto()" style=" position: absolute; right: 600px; top: 640px; background-color: #f36f48">
+            Pulsame
+        </div>
+    </body>
+</html>
