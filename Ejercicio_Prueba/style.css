@@ -1,0 +1,26 @@
+button{
+    background-color: #3fb6b2;
+    /*Centro los botones*/
+    display: block;
+    margin: 0 auto;
+    /*Estilo de los botones*/
+    font-weight: bold;
+    cursor: pointer;
+    width: 150px;
+    height: 75px;
+}
+
+.circulo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: darkorchid;
+    /*Centro el texto del circulo en el centro del circulo*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+
