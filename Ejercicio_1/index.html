@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./style.css">
+    <title>Ejercicio 1</title>
+    <script src="./script.js"></script>
+  </head>
+  <body onload="fetchChars(1)">
+    <h1>Personajes Ricky & Morty</h1>
+    <div id="results"></div>
+    <!-- NOTA: No logro centrar los botones con el buscador abajo de la pagina -->
+    <button onclick="prevPage()">prev</button>
+    <button onclick="nextPage()">next</button>
+    <button onclick="nextPageFinder()">nextfind</button>
+    <button onclick="prevPageFinder()">prevfind</button>
+    <div id="finder">
+      <input type="text" id="name" pag=" paginas"/>
+      <button onclick="finder()">find</button>
+    </div>
+  </body>
+</html>
