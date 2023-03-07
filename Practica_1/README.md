@@ -11,3 +11,6 @@ Endpoints:
 - Los mensajes y el listado de contactos deberán ser scrolleables.
 - Cuando se envía un mensaje aleatoriamente se pondrá en el lado derecho (enviado por otra persona) o en el lado izquierdo (enviado por mí) cambiando su color de fondo.
 - Se podrá crear un contacto con un botón situado en el listado de usuarios al final del mismo.
+
+-----------------------------
+Nota: 8
