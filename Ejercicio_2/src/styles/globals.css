@@ -1,60 +1,77 @@
-/*
-CÓDIGO INCOMPLETO
-*/
+body{
+    background: lightblue;
+}
 
-.formulario{
+.formulario {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: #f5f5f5;
+    padding: 20px;
+    font-family: sans-serif;
 }
 
-.formulario .nombre{
-    color: red;
-    font-size: 20px;
-}
-
-.barra_busqueda{
-    width: 300px;
-    height: 30px;
-    border: 1px solid #000;
-    border-radius: 5px;
-    padding: 5px;
-}
-
-.boton{
-    width: 120px;
-    height: 30px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
+.formulario .nombre {
+    background-color: #EDD6EA;
+    border: 1.5px solid black;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    color: black;
 }
 
-/*
-------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------------------------------------
-*/
+.formulario .nombre:hover {
+    background-color: #F6E9F4;
+}
 
-.id{
+.barra_busqueda {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 10px 10px 10px;
+    width: 90%;
+    font-size: 16px;
+}
+
+.botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.boton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.boton:hover {
+    background-color: #3e8e41;
+}
+
+.id {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f5f5f5;
+    height: 90vh;
 }
 
-.imagen{
-    width: 200px;
-    height: 200px;
+.imagen {
     border-radius: 50%;
-    background-color: #000;
+    margin-bottom: 1rem;
+    border: 1.5px solid black;
 }
 
-.id .nombre{
-    color: red;
-    font-size: 20px;
+.id .nombre {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
 }
