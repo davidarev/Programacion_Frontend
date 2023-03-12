@@ -37,22 +37,26 @@ const Formulario = () => {
     */
     return (
         <>
-            <main className={"formulario"}>
-                {data.map((character: any) => (
-                        <Link href={`/character/${character.id}`}>
-                            <div key={character.id} className={"nombre"}>
-                                {character.name}
-                            </div>
-                        </Link>
-                ))}
+            <body>
+                <main className={"formulario"}>
+                    {data.map((character: any) => (
+                            <Link href={`/character/${character.id}`}>
+                                <div key={character.id} className={"nombre"}>
+                                    {character.name}
+                                </div>
+                            </Link>
+                    ))}
+                </main>
                 <input type="text" className={"barra_busqueda"} placeholder="Nombre a buscar" onChange={(e) => setName(e.target.value)}></input>
                 <button className={"boton"} id={"busqueda"} onClick={() => {
-                        setPage(1);
-                        fetchData();
-                }}> Buscar </button>
-                <button className={"boton"} id={"anterior"} onClick={() => setPage(page - 1)}>Anterior Pagina</button>
-                <button className={"boton"} id={"siguiente"} onClick={() => setPage(page + 1)}>Siguiente Pagina</button>
-            </main>
+                    setPage(1);
+                    fetchData();
+                }}> Buscar </button> <br/>
+                <main className={"botones"}>
+                    <button className={"boton"} id={"anterior"} onClick={() => setPage(page - 1)}>Anterior Pagina</button>
+                    <button className={"boton"} id={"siguiente"} onClick={() => setPage(page + 1)}>Siguiente Pagina</button>
+                </main>
+            </body>
         </>
     );
 };
