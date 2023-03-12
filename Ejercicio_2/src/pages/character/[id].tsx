@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { GetServerSideProps } from 'next';
+import Link from "next/link";
 
 //Creo un tipo llamado Character que tiene los atributos id, name e image
 type Character = {
@@ -12,6 +13,9 @@ type Character = {
 const CharacterPage: (props: Character) => JSX.Element = (props: Character) => {
     return (
         <>
+            <Link href={`/`}>
+                <button className={"boton"} id={"volver"}>Volver</button>
+            </Link>
             <main className={"id"}>
                 <Image className={"imagen"} src={props.image} alt={props.name} width={100} height={100} />
                 <br/>
