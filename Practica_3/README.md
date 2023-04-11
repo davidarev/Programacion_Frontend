@@ -26,3 +26,7 @@ La cuarta pagina deberá tener este enlace: /elixiris/:id y llamara al siguiente
 Cosas a tener en cuenta:
 - Mientras se cargan los datos deberá aparecer un spinner en toda la pantalla bloqueando la interacción.
 - Se deberán controlar los errores de la API. Ejemplo un 404 si se busca un mago que no existe
+
+---------------------
+
+Nota: 8
