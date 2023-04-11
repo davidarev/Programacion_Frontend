@@ -41,3 +41,6 @@ En la pagina del detalle tendrá la siguiente estructura
   - Imagen larga
   - Titulo
   - Descripción Larga
+  
+  -----------------
+  Nota: 10
